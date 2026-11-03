@@ -442,4 +442,6 @@ La première version versionnée du projet est **v1.0.0**.
 Elle regroupe le rapport Power BI, son export PDF, les données, les captures et les scripts documentés.
 
 Consulter le [journal des modifications](CHANGELOG.md) pour connaître son contenu.
+
+
 Télécharger la version v1.0.0 : https://github.com/YvesBriceAbogo/analyse-comportement-achat-clients/releases/tag/v1.0.0
