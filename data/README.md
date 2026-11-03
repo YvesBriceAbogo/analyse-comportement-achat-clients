@@ -105,3 +105,24 @@ Une ligne représente une observation du fichier, pas nécessairement une comman
 Le jeu de données présenté ne comporte pas de date d’achat ni d’identifiant explicite de commande.
 
 Voir la [note méthodologique](../documentation/methodologie-et-limites.md).
+
+## 8. Résultats du contrôle Python
+
+L’exécution du script de préparation sur le fichier source utilisé pour cette version du projet a produit les résultats suivants :
+
+| Contrôle | Résultat |
+|---|---:|
+| Observations dans le fichier source | 3 900 |
+| Observations dans le fichier nettoyé | 3 900 |
+| Clients distincts dans le fichier nettoyé | 3 900 |
+| Notes imputées par la médiane de leur catégorie | 37 |
+
+Les imputations concernent environ 0,95 % des observations.
+
+Le nombre d’observations est conservé pendant le traitement. Le fichier nettoyé présente une observation par identifiant client dans cette version du jeu de données.
+
+Cette correspondance ne permet pas d’assimiler les observations à des commandes distinctes : aucun identifiant explicite de commande n’est disponible.
+
+Les détails de l’exécution, les empreintes des fichiers, les bornes des groupes d’âge et les contrôles de valeurs manquantes figurent dans le [rapport qualité](rapport_qualite.json).
+
+La concordance avec la table SQL Server doit être contrôlée séparément.
