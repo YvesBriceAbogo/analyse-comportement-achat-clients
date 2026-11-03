@@ -126,3 +126,15 @@ Cette correspondance ne permet pas d’assimiler les observations à des command
 Les détails de l’exécution, les empreintes des fichiers, les bornes des groupes d’âge et les contrôles de valeurs manquantes figurent dans le [rapport qualité](rapport_qualite.json).
 
 La concordance avec la table SQL Server doit être contrôlée séparément.
+
+## 9. Statut des fichiers et licence
+
+Les fichiers source et nettoyé sont présents dans cette version du dépôt.
+
+Leur présence ne constitue pas une déclaration selon laquelle ils seraient placés sous licence MIT.
+
+La provenance exacte et la licence d’origine restent à confirmer. Aucune autorisation de réutilisation ou de redistribution n’est déduite de leur seule disponibilité sur Internet.
+
+Les empreintes présentes dans le rapport qualité assurent la traçabilité technique des fichiers ; elles ne renseignent pas sur leurs droits d’utilisation.
+
+Voir le document [Licences, provenance et conditions de diffusion](../NOTICE.md).
