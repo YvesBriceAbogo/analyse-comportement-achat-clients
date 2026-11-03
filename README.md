@@ -146,6 +146,8 @@ Les conventions de segmentation, les groupes d’âge et les limites d’interpr
 - [Données et résultats du contrôle Python](data/README.md)
 - [Préparation des données avec Python](python/README.md)
 - [Contrôles et analyses SQL](sql/README.md)
+- [Validation croisée Python et SQL Server](documentation/validation-des-donnees.md)
+- [Connexion et typage dans Power Query](power-query/README.md)
 
 Les scripts Python, SQL, Power Query et DAX, les fichiers de données et les livrables Power BI seront intégrés progressivement, avec leurs instructions d’utilisation.
 
