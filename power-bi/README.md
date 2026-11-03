@@ -11,16 +11,20 @@ Il comprend deux pages :
 
 Les intitulés du rapport sont principalement en anglais. La documentation du projet est rédigée en français.
 
-## 2. Livrables préparés
+## 2. Livrables disponibles
 
 | Fichier | Usage |
 |---|---|
-| `analyse-comportement-achat-clients.pbix` | Rapport interactif et modèle Power BI |
-| `analyse-comportement-achat-clients.pdf` | Consultation statique des deux pages |
-
-La mise à disposition du PBIX est finalisée lors de la préparation de la release, en fonction de sa taille et des conditions de diffusion applicables.
+| [Télécharger le rapport Power BI — PBIX](analyse-comportement-achat-clients.pbix) | Ouvrir le rapport interactif et examiner son modèle dans Power BI Desktop |
+| [Consulter le rapport — PDF](analyse-comportement-achat-clients.pdf) | Consulter les deux pages sans installer Power BI Desktop |
 
 Les captures PNG sont disponibles dans le dossier [images](../images/).
+
+Le [guide de prise en main](../documentation/prise-en-main-power-bi.md) précise les conditions d’ouverture et d’actualisation.
+
+Ces fichiers constituent une version figée du projet. Ils ne sont pas mis à jour automatiquement par les actualisations planifiées dans Power BI Service.
+
+La version déposée sur GitHub ne remplace pas automatiquement le rapport déjà publié dans Power BI Service.
 
 ## 3. Version destinée à la diffusion
 
