@@ -1,0 +1,28 @@
+// ============================================================
+// MESURES DE BASE
+//
+// Intégrer chaque définition séparément dans Power BI Desktop.
+// Ce fichier n'est pas une requête DAX à exécuter en bloc.
+// ============================================================
+
+
+// Montant total des achats observés, exprimé en USD.
+Total Purchase =
+SUM('customer_shop'[purchase_amount])
+
+
+// Nombre d'observations du fichier.
+// Ce nombre n'est pas assimilé à des commandes distinctes.
+Total Observations =
+COALESCE(
+    COUNTROWS('customer_shop'),
+    0
+)
+
+
+// Nombre d'identifiants clients distincts et non vides.
+Number of customers =
+COALESCE(
+    DISTINCTCOUNTNOBLANK('customer_shop'[customer_id]),
+    0
+)
