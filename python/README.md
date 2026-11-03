@@ -82,3 +82,71 @@ Le rapport qualité enregistre la version de Python, celle de pandas et les empr
 La concordance entre le fichier régénéré, la table SQL Server et le rapport Power BI doit être vérifiée avant la publication d’une release.
 
 Les valeurs relevées dans les captures du rapport constituent des références de comparaison, et non des résultats de tests exécutés automatiquement.
+
+## 8. Chargement de validation dans SQL Server
+
+Le script `charger_sql_validation.py` charge le CSV nettoyé dans une table distincte :
+
+`dbo.customer_shop_validation`
+
+Il ne modifie pas la table active `dbo.customer_shop`.
+
+### Dépendances supplémentaires
+
+```powershell
+.\.venv\Scripts\python.exe -m pip install -r python/requirements-sql.txt
+```
+
+Un pilote Microsoft ODBC Driver 18 ou 17 for SQL Server doit également être installé sur l’ordinateur. Le paquet Python `pyodbc` ne remplace pas ce pilote système.
+
+### Connexion locale
+
+L’authentification Windows utilise l’identité du compte qui exécute Python.
+
+```powershell
+$env:SQLSERVER_SERVER = "localhost"
+$env:SQLSERVER_DATABASE = "customer shopping"
+```
+
+Aucun mot de passe n’est stocké dans le script.
+
+Le compte Windows doit disposer des autorisations nécessaires pour créer et alimenter la table de validation.
+
+### Exécution
+
+```powershell
+.\.venv\Scripts\python.exe python/charger_sql_validation.py
+```
+
+Le script :
+
+- vérifie l’empreinte du CSV par rapport au rapport qualité ;
+- prépare les types numériques et les longueurs de texte ;
+- charge les données avec des types SQL explicites ;
+- relit et compare les 19 colonnes ;
+- encadre le chargement et sa vérification dans une transaction.
+
+Il refuse de remplacer une table de validation déjà existante.
+
+### Types de validation
+
+- Montants : `DECIMAL(19,4)`.
+- Notes : `DECIMAL(10,4)`.
+- Identifiants : `BIGINT`.
+- Textes : `NVARCHAR` avec longueurs définies.
+
+Ces choix ne modifient pas les types de la table active.
+
+### Certificat de connexion
+
+La configuration proposée utilise une connexion chiffrée avec `TrustServerCertificate=yes`, pour l’environnement local de développement.
+
+Pour une infrastructure de production, utiliser un certificat approuvé et conserver sa validation.
+
+### Comparaison avec la table active
+
+Après un chargement réussi, exécuter :
+
+`sql/03_comparaison_chargement.sql`
+
+Une concordance des données ne déclenche aucun remplacement automatique de la table active.
