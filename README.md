@@ -149,6 +149,9 @@ Les conventions de segmentation, les groupes d’âge et les limites d’interpr
 - [Validation croisée Python et SQL Server](documentation/validation-des-donnees.md)
 - [Connexion et typage dans Power Query](power-query/README.md)
 - [Mesures, segmentation et carte HTML en DAX](dax/README.md)
+- [Rapport et livrables Power BI](power-bi/README.md)
+- [Recette du rapport Power BI](documentation/recette-power-bi.md)
+- [Consulter le rapport au format PDF](power-bi/analyse-comportement-achat-clients.pdf)
 
 Les scripts Python, SQL, Power Query et DAX, les fichiers de données et les livrables Power BI seront intégrés progressivement, avec leurs instructions d’utilisation.
 
