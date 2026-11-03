@@ -152,6 +152,8 @@ Les conventions de segmentation, les groupes d’âge et les limites d’interpr
 - [Rapport et livrables Power BI](power-bi/README.md)
 - [Recette du rapport Power BI](documentation/recette-power-bi.md)
 - [Consulter le rapport au format PDF](power-bi/analyse-comportement-achat-clients.pdf)
+- [Guide de prise en main du rapport Power BI](documentation/prise-en-main-power-bi.md)
+- [Télécharger le rapport Power BI — PBIX](power-bi/analyse-comportement-achat-clients.pbix)
 
 Les scripts Python, SQL, Power Query et DAX, les fichiers de données et les livrables Power BI seront intégrés progressivement, avec leurs instructions d’utilisation.
 
