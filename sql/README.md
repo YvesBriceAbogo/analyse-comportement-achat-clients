@@ -103,3 +103,48 @@ En particulier :
 - les montants d’achat ne permettent pas, sans coûts associés, de mesurer la rentabilité.
 
 Voir également la [note méthodologique](../documentation/methodologie-et-limites.md).
+
+## 8. Résultats du rapprochement initial
+
+Les contrôles exécutés sur la table active ont produit :
+
+| Contrôle | Résultat |
+|---|---:|
+| Observations | 3 900 |
+| Clients distincts | 3 900 |
+| Identifiants manquants | 0 |
+| Répétitions d’identifiants | 0 |
+| Montants absents ou invalides | 0 |
+| Notes absentes ou invalides | 0 |
+| Montant total des achats | 233 071,00 USD |
+| Montant moyen d’achat | 59,76 USD |
+| Note moyenne | 3,75 |
+
+Les agrégats concordent avec les résultats Python aux précisions affichées.
+
+Types physiques observés dans la table active :
+
+- `purchase_amount` : `BIGINT` ;
+- `review_rating` : `FLOAT`.
+
+Ces contrôles initiaux ne constituent pas une comparaison de chaque ligne.
+
+## 9. Comparaison du chargement de validation
+
+Le script `03_comparaison_chargement.sql` compare :
+
+- la table active `dbo.customer_shop` ;
+- la table technique `dbo.customer_shop_validation`, alimentée par Python.
+
+Il doit être exécuté après le chargement Python de validation.
+
+Le résultat attendu est :
+
+- des volumes et agrégats concordants ;
+- zéro ligne en écart dans chaque sens de comparaison.
+
+La comparaison porte sur les 19 colonnes issues du CSV nettoyé. Les montants et les notes sont alignés à quatre décimales ; les textes suivent les règles de comparaison de la base SQL.
+
+L’opérateur `EXCEPT` compare des lignes distinctes. Son résultat doit donc être interprété avec les contrôles de volumes et d’unicité des identifiants.
+
+Ce script ne modifie aucune table et ne déclenche aucun remplacement.
