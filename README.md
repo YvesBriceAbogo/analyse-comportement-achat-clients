@@ -434,3 +434,12 @@ La source exacte et la licence d’origine des données restent non confirmées.
 Le projet est une démonstration analytique. Les montants observés ne sont pas présentés comme un chiffre d’affaires comptable audité, et les comparaisons ne démontrent pas de causalité.
 
 Consulter le document [Licences, provenance et conditions de diffusion](NOTICE.md) avant toute réutilisation ou redistribution.
+
+## 17. Version publiée
+
+La première version versionnée du projet est **v1.0.0**.
+
+Elle regroupe le rapport Power BI, son export PDF, les données, les captures et les scripts documentés.
+
+Consulter le [journal des modifications](CHANGELOG.md) pour connaître son contenu.
+Télécharger la version v1.0.0 : https://github.com/YvesBriceAbogo/analyse-comportement-achat-clients/releases/tag/v1.0.0
