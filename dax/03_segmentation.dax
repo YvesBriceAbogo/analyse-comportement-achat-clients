@@ -1,0 +1,22 @@
+// ============================================================
+// COLONNE CALCULEE
+//
+// Table : customer_shop
+//
+// Modifier la colonne existante ou utiliser "Nouvelle colonne".
+// Ne pas créer cette définition comme une mesure.
+// ============================================================
+
+customer_segment =
+VAR PreviousPurchases =
+    'customer_shop'[previous_purchases]
+RETURN
+    SWITCH(
+        TRUE(),
+        ISBLANK(PreviousPurchases), "Non classé",
+        PreviousPurchases = 1, "New",
+        PreviousPurchases >= 2
+            && PreviousPurchases <= 10, "Returning",
+        PreviousPurchases > 10, "Loyal",
+        "Non classé"
+    )
