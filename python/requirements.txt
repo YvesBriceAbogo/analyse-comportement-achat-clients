@@ -1,0 +1,3 @@
+# Dépendance nécessaire au nettoyage des données.
+# La version effectivement utilisée est enregistrée dans le rapport qualité.
+pandas>=2.3.3,<3.0
