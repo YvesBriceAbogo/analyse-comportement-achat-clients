@@ -1,0 +1,6 @@
+# Inclut les dépendances du nettoyage.
+-r requirements.txt
+
+# Connexion et chargement vers Microsoft SQL Server.
+SQLAlchemy>=2.0.44,<3.0
+pyodbc>=5.3.0,<6.0
