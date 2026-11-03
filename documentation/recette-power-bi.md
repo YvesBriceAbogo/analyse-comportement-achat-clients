@@ -84,3 +84,12 @@ Ces résultats décrivent le jeu de données étudié et ne constituent pas une 
 - [x] La version locale et la version publiée dans Power BI Service sont clairement distinguées.
 
 Les cases ne doivent être cochées qu’après réalisation effective du contrôle correspondant.
+
+## 9. Vérification des fichiers déposés
+
+- [x] Le PBIX téléchargé depuis GitHub s’ouvre dans Power BI Desktop.
+- [x] Le PBIX téléchargé contient les deux pages métier attendues.
+- [x] Le PDF disponible sur GitHub est lisible et contient deux pages.
+- [x] Les liens de téléchargement du dossier `power-bi` fonctionnent.
+
+Ces vérifications portent sur les fichiers effectivement déposés, et non uniquement sur les copies locales.
