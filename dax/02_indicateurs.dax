@@ -1,0 +1,73 @@
+// ============================================================
+// INDICATEURS ET MESURES FILTREES
+//
+// Prérequis : mesures de 01_mesures_base.dax.
+// Intégrer chaque définition séparément dans Power BI Desktop.
+// ============================================================
+
+
+// Montant moyen par observation d'achat.
+Avg purchase amount =
+DIVIDE(
+    [Total Purchase],
+    [Total Observations]
+)
+
+
+// Moyenne des notes, y compris celles imputées dans Python.
+Avg review rating =
+AVERAGE('customer_shop'[review_rating])
+
+
+// Clients masculins dans le contexte de filtre courant.
+Male customers =
+CALCULATE(
+    [Number of customers],
+    KEEPFILTERS('customer_shop'[gender] = "Male")
+)
+
+
+// Clients féminins dans le contexte de filtre courant.
+Female customers =
+CALCULATE(
+    [Number of customers],
+    KEEPFILTERS('customer_shop'[gender] = "Female")
+)
+
+
+// Nombre d'observations d'achat avec remise.
+Observations with Discount =
+CALCULATE(
+    [Total Observations],
+    KEEPFILTERS('customer_shop'[discount_applied] = "Yes")
+)
+
+
+// Proportion d'observations avec remise.
+// Résultat compris entre 0 et 1 : appliquer le format pourcentage.
+% Purchases with Discount =
+DIVIDE(
+    [Observations with Discount],
+    [Total Observations]
+)
+
+
+// Montant des achats associés à une remise.
+// Ce n'est pas le montant des réductions accordées.
+Purchase amount with discount applied =
+COALESCE(
+    CALCULATE(
+        [Total Purchase],
+        KEEPFILTERS('customer_shop'[discount_applied] = "Yes")
+    ),
+    0
+)
+
+
+// Clients ayant strictement plus de cinq achats antérieurs.
+// Cette définition est distincte du segment Loyal.
+Number of repeat buyers =
+CALCULATE(
+    [Number of customers],
+    KEEPFILTERS('customer_shop'[previous_purchases] > 5)
+)
