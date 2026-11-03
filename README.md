@@ -143,5 +143,9 @@ Les conventions de segmentation, les groupes d’âge et les limites d’interpr
 
 - [Méthodologie, conventions et limites](documentation/methodologie-et-limites.md)
 - [Captures du rapport et du modèle](images/)
+- [Données et résultats du contrôle Python](data/README.md)
+- [Préparation des données avec Python](python/README.md)
+- [Contrôles et analyses SQL](sql/README.md)
 
 Les scripts Python, SQL, Power Query et DAX, les fichiers de données et les livrables Power BI seront intégrés progressivement, avec leurs instructions d’utilisation.
+
